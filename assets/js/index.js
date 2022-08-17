@@ -58,6 +58,13 @@ const render = async (type, services) => {
 
   for (const service of services) {
     const dom = base.clone()
+    const renderBtn = (text, link) => {
+      const button = dom.find('.base-button').clone()
+      button.attr('href', link)
+      button.find('button').text(text)
+      button.removeClass('base-button')
+      dom.find('.btn-group').append(button)
+    }
 
     switch (type) {
       case 0:
@@ -65,7 +72,26 @@ const render = async (type, services) => {
         dom.find('.base-name').text(service.name)
         dom.find('.base-description').text(service.description)
         dom.find('.base-image').attr('src', service.image)
-        dom.find('.base-path').attr('href', service.path)
+        if (service.path1 && service.button1) {
+          dom.find('.base-image-link').attr('href', service.path1)
+          renderBtn(service.button1, service.path1)
+        }
+
+        if (service.path2 && service.button2) {
+          renderBtn(service.button2, service.path2)
+        }
+
+        if (service.path3 && service.button3) {
+          renderBtn(service.button3, service.path3)
+        }
+
+        if (service.path4 && service.button4) {
+          renderBtn(service.button4, service.path4)
+        }
+
+        if (service.path5 && service.button5) {
+          renderBtn(service.button5, service.path5)
+        }
         dom.find('.base-author').text(service.author)
 
         $('.page').append(dom)

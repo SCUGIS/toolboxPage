@@ -2,6 +2,14 @@
   display: none;
 }
 
+.base-button {
+  display: none;
+}
+
+.base-button-link {
+  margin-right: 10px;
+}
+
 .base-image {
   height: 300px;
   width: auto;

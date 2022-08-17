@@ -93,8 +93,8 @@
         <h1 class="fw-light">快速上手的數位人文工具</h1>
         <p class="lead text-muted">這邊提供各種由東吳大學GIS中心所開發及維護的微型服務，讓大家能更好地呈現自己的資料</p>
         <p>
-          <a href="#" class="btn btn-primary my-2">我們託管的服務</a>
-          <a href="#" class="btn btn-secondary my-2">我們維護的程式庫</a>
+          <a href="#" id="servicesRender" class="btn btn-primary my-2">我們託管的服務</a>
+          <a href="#" id="reposRender" class="btn btn-secondary my-2">我們維護的程式庫</a>
         </p>
       </div>
     </div>
@@ -102,28 +102,27 @@
 
   <div class="album py-5 bg-light">
     <div class="container">
+      <div class="col base">
+        <div class="card shadow-sm">
+          <a class="base-path" href="#">
+            <img class="base-image bd-placeholder-img card-img-top" src="#">
+          </a>
 
-      <div class="page row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
-        <div class="col base">
-          <div class="card shadow-sm">
-            <a class="base-path" href="#">
-              <img class="base-image bd-placeholder-img card-img-top" src="#">
-            </a>
-
-            <div class="card-body">
-              <h4 class="base-name card-text">name</h4>
-              <p class="base-description card-text">description</p>
-              <div class="d-flex justify-content-between align-items-center">
-                <div class="btn-group">
-                  <a class="base-path" href="#">
-                    <button type="button" class="btn btn-sm btn-outline-secondary">開啟服務</button>
-                  </a>
-                </div>
-                <small class="base-author text-muted">text</small>
+          <div class="card-body">
+            <h4 class="base-name card-text">name</h4>
+            <p class="base-description card-text">description</p>
+            <div class="d-flex justify-content-between align-items-center">
+              <div class="btn-group">
+                <a class="base-path" href="#">
+                  <button type="button" class="btn btn-sm btn-outline-secondary">開啟服務</button>
+                </a>
               </div>
+              <small class="base-author text-muted">text</small>
             </div>
           </div>
         </div>
+      </div>
+      <div class="page row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
       </div>
     </div>
   </div>

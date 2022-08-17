@@ -10,6 +10,11 @@ const config = {
 
 
 const init = async () => {
+  $('.parallax').parallax({
+    imageSrc: './assets/image/banner.jpg',
+    speed: 0.2,
+  });
+
   const services = await $.ajax({
     url: `${config.jsonapi.base}${config.jsonapi.services}`,
     type: 'GET',
@@ -24,10 +29,6 @@ const init = async () => {
   config.repos = repos.rows
   config.services = services.rows
 
-  $('.parallax').parallax({
-    imageSrc: './assets/image/banner.jpg',
-    speed: 0.2,
-  });
   await render(0, config.services)
 }
 
@@ -99,10 +100,14 @@ const render = async (type, services) => {
       case 1:
         dom.removeClass('base')
         dom.find('.base-name').text(service.name)
-        dom.find('.base-description').text(service.description)
-        // dom.find('.base-image').attr('src', service.image)
-        dom.find('.base-path').attr('href', service.path)
-        // dom.find('.base-author').text(service.author)
+        dom.find('.base-description').text(service.description || "")
+        dom.find('.base-image').attr('src', './assets/image/github.jpg')
+        dom.find('.base-author').text(service.author)
+
+        if (service.path1 && service.button1) {
+          dom.find('.base-image-link').attr('href', service.path1)
+          renderBtn(service.button1, service.path1)
+        }
 
         $('.page').append(dom)
         break

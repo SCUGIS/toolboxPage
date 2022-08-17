@@ -24,14 +24,31 @@ const init = async () => {
   config.repos = repos.rows
   config.services = services.rows
 
+  $('.parallax').parallax({
+    imageSrc: './assets/image/banner.jpg',
+    speed: 0.2,
+  });
   await render(0, config.services)
 }
 
-$('#reposRender').click(async () => {
+const switchClass = (dom) => {
+  if (dom.hasClass('btn-secondary')) {
+    const otherDom = $('.switch-group > .btn-primary')
+    otherDom.removeClass('btn-primary')
+    otherDom.addClass('btn-secondary')
+
+    dom.removeClass('btn-secondary')
+    dom.addClass('btn-primary')
+  }
+}
+
+$('#reposRender').click(async function () {
+  switchClass($(this))
   await render(1, config.repos)
 })
 
-$('#servicesRender').click(async () => {
+$('#servicesRender').click(async function () {
+  switchClass($(this))
   await render(0, config.services)
 })
 

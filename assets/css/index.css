@@ -13,3 +13,20 @@
 .fa-solid {
   margin-right: 10px;
 }
+
+header {
+  position: absolute;
+  width: 100%;
+}
+
+.parallax {
+  width: 100%;
+}
+
+.font-border {
+  text-shadow: -0.5px 0 #fff, 0 0.5px #fff, 0.5px 0 #fff, 0 -0.5px #fff;
+}
+
+.btn-border {
+  border: 0.5px solid #fff !important;
+}

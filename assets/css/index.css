@@ -1,0 +1,15 @@
+.base {
+  display: none;
+}
+
+.base-image {
+  height: 300px;
+  width: auto;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.fa-solid {
+  margin-right: 10px;
+}
